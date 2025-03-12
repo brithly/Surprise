@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary Baba ko</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #F2E2B1, #BDB395);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Inria Sans Light', serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 5rem;
+            color: #444;
+            font-weight: bold;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        h1:hover {
+            transform: scale(1.2);
+        }
+
+        .card {
+            width: 100%;
+            max-width: 800px;
+            height: 300px;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            background: rgba(189, 179, 149, 0.5);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-inner {
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-item {
+            width: 100%;
+            height: 100%;
+        }
+
+        .image-pair {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-item img {
+            flex: 1;
+            height: 250px; /* Reduce height */
+            max-width: 45%; /* Ensure images don't exceed half the container */
+            object-fit: cover; /* Maintain aspect ratio without distortion */
+            border-radius: 10px;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: auto;
+            height: auto;
+            opacity: 1;
+        }
+
+        .carousel-control-prev {
+            left: -40px;
+        }
+
+        .carousel-control-next {
+            right: -40px;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(80%);
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        <a href="phase2.html" target="_blank" style="text-decoration: none; color: inherit;">
+            HAPPY 2ND<br>ANNIVERSARY BABI
+        </a>
+    </h1>
+
+    <div class="card">
+        <div id="anniversaryCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="image-pair">
+                        <img src="1.JPG" alt="Anniversary Memory 1">
+                        <img src="2.JPG" alt="Anniversary Memory 2">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="image-pair">
+                        <img src="3.JPG" alt="Anniversary Memory 3">
+                        <img src="4.JPEG" alt="Anniversary Memory 4">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="image-pair">
+                        <img src="5.jpg" alt="Anniversary Memory 5">
+                        <img src="6.jpg" alt="Anniversary Memory 6">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="image-pair">
+                        <img src="7.jpeg" alt="Anniversary Memory 7">
+                        <img src="8.JPEG" alt="Anniversary Memory 8">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="image-pair">
+                        <img src="9.jpg" alt="Anniversary Memory 9">
+                        <img src="10.jpg" alt="Anniversary Memory 10">
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#anniversaryCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#anniversaryCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

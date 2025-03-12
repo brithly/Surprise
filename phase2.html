@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary Baba ko</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        /* Background styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #F2E2B1, #BDB395);
+            font-family: 'Fira Sans', sans-serif;
+            margin: 0;
+            position: relative;
+        }
+
+        /* Button container at the top-right */
+        .button-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        /* Styling for the top-right buttons */
+        .top-button {
+            background-color: #BDB395;
+            border: none;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            cursor: pointer;
+            color: #fff;
+            font-size: 22px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .top-button:hover {
+            background-color: #a99c85;
+        }
+
+        .top-button i {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Active button styling */
+        .top-button.active {
+            background-color: #8c7a65 !important;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Container to align cards left and right */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1225px;
+            gap: 20px;
+            padding-top: 50px;
+        }
+
+        /* Card styling */
+        .card {
+            background: #FAF5E4;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .col-sm-5 {
+            background: #FAF5E4;
+            border-radius: 40px 0 0 40px;
+            padding: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            justify-content: space-between; /* Ensures content is evenly spaced */
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #6B5B4E;
+            text-align: center;
+        }
+
+        .subtitle {
+            font-size: 12px;
+            color: #6B5B4E;
+            text-align: center;
+        }
+
+        .letter {
+            font-size: 12px;
+            color: #6B5B4E;
+            text-align: center;
+            padding: 20px;
+            flex-grow: 1; /* Makes letter content take available space without pushing buttons */
+            overflow-y: auto; /* Prevents overflow issues */
+            max-height: 300px; /* Adjust as needed */
+        }
+
+        .divider {
+            height: 2px;
+            background: #C5B78E;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        /* Button Group Styling */
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: auto; /* Ensures buttons stay at the bottom */
+        }
+
+        /* Button Styling (same as Next button for consistency) */
+        .back-button,
+        .next-button {
+            background-color: #BDB395;
+            border: 2px solid #FFFFFF;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            color: #FFFFFF;
+            font-size: 15px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-family: 'Fira Sans', sans-serif;
+            box-shadow: inset 2px 2px 4px rgba(255, 255, 255, 0.6),
+                inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-button:hover,
+        .next-button:hover {
+            background-color: #bba58a;
+            border-color: #8c7a65;
+        }
+
+        .divider {
+            height: 2px;
+            background: #C5B78E;
+            width: 100%;
+            margin: 10px 0;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Right Buttons -->
+    <div class="button-container">
+        <a href="phase0.html" class="top-button"><i class="bi bi-house"></i></a>
+        <a href="phase1.html" class="top-button"><i class="bi bi-1-circle"></i></a>
+        <a href="phase2.html" class="top-button"><i class="bi bi-2-circle"></i></a>
+        <a href="phase3.html" class="top-button"><i class="bi bi-box-arrow-right"></i></a>
+    </div>
+
+
+    <div class="container">
+        <!-- Letter Card (Left) -->
+        <div class="col-sm-5">
+            <div class="title">Letter</div>
+            <div class="subtitle">Read it with music if you like</div>
+            <div class="divider"></div>
+            <p class="letter">
+                <img src="C1.jpeg" alt="Special Memory" style="flex: 1; height: 200px; max-width: 45%; object-fit: cover; border-radius: 10px;">
+                <img src="C2.JPEG" alt="Special Memory" style="flex: 1; height: 200px; max-width: 45%; object-fit: cover; border-radius: 10px;"><br><br>
+                This letters are based from what I've felt about you and this songs brings memories of us together.
+            </p>
+
+            <br>
+            <div class="button-group">
+                <button class="button back-button">Back</button>
+                <button class="button next-button">Next</button>
+            </div>
+        </div>
+
+        <!-- First Spotify Playlist Card (Middle) -->
+        <div class="card">
+            <div class="title">Our Playlist</div>
+            <div class="subtitle">For You</div>
+            <div class="divider"></div>
+            <iframe style="border-radius:12px"
+                src="https://open.spotify.com/embed/playlist/67mhywnNTC2U7amlcS1K63?utm_source=generator&theme=0" width="100%"
+                height="380" frameBorder="0" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <!-- Second Spotify Playlist Card (Right) -->
+        <div class="card">
+            <div class="title">Baba's Playlist</div>
+            <div class="subtitle">Your Favorites</div>
+            <div class="divider"></div>
+            <iframe style="border-radius:12px"
+                src="https://open.spotify.com/embed/playlist/0P4KAW8PJq1XcHRXsq4A9P?utm_source=generator&theme=0" width="100%"
+                height="380" frameBorder="0" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get all buttons in the top-right container
+        let buttons = document.querySelectorAll(".top-button");
+
+        // Get the current page URL
+        let currentPage = window.location.pathname.split("/").pop();
+
+        // Loop through the buttons and check their href
+        buttons.forEach(button => {
+            if (button.getAttribute("href") === currentPage) {
+                button.classList.add("active");
+            }
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+            let titleElement = document.querySelector(".title");
+            let subtitleElement = document.querySelector(".subtitle");
+            let letterElement = document.querySelector(".letter");
+            let nextButton = document.querySelector(".next-button");
+            let backButton = document.querySelector(".back-button");
+
+            let pages = [
+                {
+                    title: "Letter",
+                    subtitle: "Read it with music if you like",
+                    content: `<img src="C1.jpeg" alt="Special Memory" style="flex: 1; height: 200px; max-width: 45%; object-fit: cover; border-radius: 10px;">
+                <img src="C2.JPEG" alt="Special Memory" style="flex: 1; height: 200px; max-width: 45%; object-fit: cover; border-radius: 10px;"><br><br>
+                This letters are based from what I've felt about you and this songs brings memories of us together.`
+                },
+                {
+                    title: "I don't see nobody but you",
+                    subtitle: "Song: Double Take",
+                    content: `<img src="C4.PNG" alt="Special Memory" style="flex: 1; height: 150px; max-width: 100%; object-fit: cover; border-radius: 10px;">
+                    <img src="C5.JPG" alt="Special Memory" style="flex: 1; height: 150px; max-width: 100%; object-fit: cover; border-radius: 10px;"><br><br>
+                    This song reminds me kung panu kita nagustuhan tapos iniisip ko lang na na-infatuated lang ako that time, umamin ako kay clarize kase napapansin niya na lagi na akong nangiti pagkachat ka (IKAW KASE BABA EH). 
+                    Tapos this songs reminds me on how I felt na friend lang naman kita and I don't know if you will accept my feelings, 
+                    hindi din ako sure that time na may gusto talaga ako sayo ganun (Naakit mo kase ako sa humor mo, kainis baba kainis). 
+                    Sinabi ko din sa sarili ko noon na wala akong gusto sayo kase nakikita lang naman kita at nakakasama that's why nagustuhan kita pero once na nakita ulit kita after vacation at andun pa rin yung feelings na meron ako sayo, I'll take the risk.
+                    Hindi ko na din alam kung panu mo ako napaamin baba but then I'm grateful that I'm with you now.`
+                },
+                {
+                    title: "To say I love you",
+                    subtitle: "Song: Give me your Forever",
+                    content: `<img src="C3.JPG" alt="Special Memory" style="flex: 1; height: 150px; max-width: 100%; object-fit: cover; border-radius: 10px;">
+                    <img src="C6.JPG" alt="Special Memory" style="flex: 1; height: 150px; max-width: 100%; object-fit: cover; border-radius: 10px;"><br><br>
+                    This is the song na lagi natin pinapatugtog na magkasama sa discord tapos ginawan  mo pa ata to ng encrypted na words sa IAS, pag eto yung pinapatugtog sa sinasakyan o a e-jeep o kaya Kahit saan ikaw yung naalala ko. 
+                    Sa sobrang cute nung tugtog pati baba ko cute din eh nakakainis. Kiligin ka baba wag mo na itago pa, ako lang toh. 
+                    Also baba this is the first song na pinaulit ulit natin noon kung mag-uusap man sa dc ganun o kaya kung may time pa tayo bago matulog eto yung pampalipas oras natin bago matulog. 
+                    I miss that moment yung tipong magngingitian tayo through video call, kakantahin mo itong song nato tapos yung magbababye ng matagal sabay magmamake-face sa isa't isa. 
+                    Sa sobrang dami nangyari sa last 2 sem natin, hindi ko na masyadong matandaan yung mga ganung memories. Namimiss po kita sobra baba ko, sa sobrang busy na natin at sa mga nangyari sa atin hindi na natin masyadong nagagawa ung mga yun. 
+                    Tsaka pala baba, yung sinabi ko sayo last time na kung magkahiwalay man tayo na hindi na ako maghahanap ng iba, totoo yuun. 
+                    I really want you to be with me in the future, gusto ko ikaw yung makakasama ko hanggang sa pagtanda, cringe pakinggan pero I really look forward to be with you someday.`
+                },
+                {
+                    title: "I'll be lovin' you right seven days a week",
+                    subtitle: "Song: Seven",
+                    content: `<img src="C7.JPG" alt="Special Memory" style="flex: 1; height: 125px; max-width: 55%; object-fit: cover; border-radius: 10px;">
+                    <img src="C8.JPG" alt="Special Memory" style="flex: 1; height: 125px; max-width: 50%; object-fit: cover; border-radius: 10px;"><br><br>
+                    This song reminds me of going home with you tapos may music tayo then eto yung lagi natin pinapatugtog muna kase alam mong bias ko si Jungkook. 
+                    Yung mga memories na mga yun baba, I treasure it a lot at tsaka I'm really blessed to have you in my life. 
+                    I really enjoy to be with you baba ko, may mga experiences ako na sayo ko lang nararanasan (Hindi yung ano ah! Ikaw aahh!) yung parang ba nakaka-out of town or mapunta sa malayong lugar, deep talks, 
+                    confrontations (alam mo naman na hindi ako marunong mangconfront ng tao), magkaroon ng close person na sobra yung care sa akin, 
+                    and many many more hindi ko masabi lahat kase alam kong tamad kang magbasa baba kaya yung mga highlights lang. 
+                    Btw I want to make more memories, treasured memories with you a lot a lot, and I really wish we could be together hanggang sa dulo. `
+                },
+                {
+                    title: "I like me better when I'm with you",
+                    subtitle: "Song: I like Me Better",
+                    content: `<img src="C9.JPG" alt="Special Memory" style="flex: 1; height: 125px; max-width: 100%; object-fit: cover; border-radius: 10px;">
+                    <img src="C10.JPG" alt="Special Memory" style="flex: 1; height: 125px; max-width: 100%; object-fit: cover; border-radius: 10px;"><br><br>
+                    Narealize ko lang nung nakasama kita, madaming nagbago sa akin. Mas Lalo akong naging out-going na person na hindi na ina-isolate yung sarili sa iba. 
+                    Nung nakilala kita mas lalo akong naging madaldal, actually nagiging madaldal lang naman ako ng sobra at maingay sa mga kaibigan ko nung high school at sayo. 
+                    Pero tinuruan mo ako maging open sa nararamdaman ko at sa mga iniisip ko. 
+                    Natututo din ako na maging makasarili, in a good way ah kumbaga yung hindi ako mawawalan ganun. 
+                    Tinuruan mo ako baba to be a better person at maging strong, I'm trying to be suplada or magsungit din naman sa ibang tao kaso sobrang bait kase ng baba mo eh. 
+                    But then, you are there to teach me to be rude sometimes tsaka tinuruan mo rin ako maging selfish the way na isipin ko muna yung kapakanan ko, yung mental health ko, 
+                    kase minsan napapansin ko naman na parang naaapi ako but then hinahayaan ko lang then there's an experience na binigyan ako ng dahilan to stand strong and to save myself first. 
+                    Just like the song interprets, I treasure myself and love myself more when I'm with you.`
+                },
+                {
+                    title: "I'll be lovin' you right seven days a week",
+                    subtitle: "Song: Gusto",
+                    content: `<img src="C11.JPG" alt="Special Memory" style="flex: 1; height: 90px; max-width: 50%; object-fit: cover; border-radius: 10px;">
+                    <img src="C12.JPG" alt="Special Memory" style="flex: 1; height: 90px; max-width: 50%; object-fit: cover; border-radius: 10px;"><br><br>
+                    To tell you the whole story baba ko, November or October pa lang sinabi ko na kay clarize na may nagugutuhan a kong guy pero di ko pa sinasabi na ikaw yun. 
+                    Sinabi ko na lang sa kanya nung December tapos pinakita ko yung picure mo sa kanya, then sinabi ko na baka infatuated lang ako kase hindi pa naman ako sure sa feeling ko nung time na yun. 
+                    Tapos sabi niya bakit hindi ko itry na iChat ka, kase sa chat pa lang naman minsan hindi parang dry na agad malalaman mo na kung interasado ba yung tao na makilala ka ganun. 
+                    Then I take the risk, chinat kita ng chinat kaya mapapansin mo na papansin ako sayo noon nho? Sabi pa nga niya buti hindi ka daw maasim magchat nakakainis daw yung mga ganun eh, 
+                    sabi ko yung mukha niya lang umaasim pag kinukulit ko siya. Tsaka alam mo baba nung nalaman niya na tayo kinilig siya pero at the same time kinabahan tapos pinagalitan pa ako kase hindi alam nila mama. 
+                    See? siya talaga ate, tsaka alam mo baba pag tumatawag ka na sinasabi niya nakangiti ka na naman dyan then alam niya na kung sino yung tumatawag. 
+                    Ganun kita kagusto baba, Oh magyayabang ka na naman nyan tapos kikiligin eme. 
+                    Pero yun nga baba, I thought talaga na hindi mo mababalik yung feelings na binibigay ko sayo and I'm really afraid na magaya yung relationship natin na on/off kase strictly no boyfriend pa ako. 
+                    I'm really afraid na dahil dun maghihiwalay tayo, also baba I'm really super happy na ikaw yung guy na manliligaw or boyfriend ko na nadala sa Bahay at pinakilala kila mama at papa. 
+                    Hindi man as boyfriend na matatawag kila mama pero it really melts my heart na makita kita na kinakausap sila mama.`
+                },
+            
+                {
+                    title: "All I can say is I was enchanted to meet you",
+                    subtitle: "Song: Enchanted",
+                    content: `<img src="C13.PNG" alt="Special Memory" style="flex: 1; height: 150px; max-width: 100%; object-fit: cover; border-radius: 10px;">
+                    <img src="C14.JPG" alt="Special Memory" style="flex: 1; height: 150px; max-width: 100%; object-fit: cover; border-radius: 10px;">
+                    <img src="C15.PNG" alt="Special Memory" style="flex: 1; height: 150px; max-width: 100%; object-fit: cover; border-radius: 10px;"><br><br>
+                    I love you so much baba ko, I'm sorry if naging sakit ako sa ulo at nahirapan a din sa sitwasyon natin. 
+                    To be honest, I don't know how to express my feelings properly pero natuto ako sayo nung nakilala na kita. 
+                    You always want me to express myself more to the point na ivovoice out ko din yung nararamdaman and thoughts ko. 
+                    Ayaw mo kase yung tumatahimik lang ako eh, nagagalit ka parang gusto mo akong kutusan. 
+                    Pero kidding aside, I really love the way you protect me to someone, to care about me and my feelings, to express your self more to me and many more na hindi ko na kayang ilista. 
+                    I also want you know that I cried sometimes na hindi ko malaman na dahilan kase siguro namimiss kita ng sobra parang tulad lang ng dati, and dahil na rin minsan yung full atensyon mo nasa mga tropa mo.  
+                    Nasasaktan ako na may times na mas importante pa tropa mo, to the point na iniisip ko na lang na minsan lang kayo magkasama pero parang lagi naman na din kayo magkakasama. 
+                    Sa mga plano for future, mostly kasama mo sila yung naririnig ko galing sayo, sa mga gusto mong balikan na memories, mostly yung kasama mo sila, I felt like na hindi ba ako makikita ni baba sa future niya? Sorry baba kung may nararamdaman akong ganto. 
+                    Hindi naman ako nagagalit baba or what pero sometimes nasasaktan ako, alam ko naman na may 'me' time ka naman din kaya iniisip ko na lang na you need time with your friends din, lagi din kase tayo na magkasama eh tsaka baka magsawa ka na din sa akin. <br><br>
+                    This song reminds me of how I've liked you so much back then hanggang sa I've taken the risk to confess and on how I really love you so much up until now.`
+                },
+            ];
+
+            let currentPageIndex = 0;
+
+           function updatePage(index) {
+                titleElement.style.opacity = 0;
+                subtitleElement.style.opacity = 0;
+                letterElement.style.opacity = 0;
+
+                setTimeout(() => {
+                    titleElement.textContent = pages[index].title;
+                    subtitleElement.textContent = pages[index].subtitle;
+                    letterElement.innerHTML = pages[index].content;
+
+                    document.querySelector(".divider").style.display = "block"; 
+
+                    // Restore opacity without affecting the divider
+                    titleElement.style.opacity = 1;
+                    subtitleElement.style.opacity = 1;
+                    letterElement.style.opacity = 1;
+                }, 300);
+            }
+
+
+            nextButton.addEventListener("click", function () {
+            if (currentPageIndex < pages.length - 1) {
+                currentPageIndex++;
+                updatePage(currentPageIndex);
+            }
+        });
+
+            backButton.addEventListener("click", function () {
+            if (currentPageIndex > 0) {
+                currentPageIndex--;
+                updatePage(currentPageIndex);
+            }
+        });
+
+
+
+        });
+
+</script>
+
+
+
+</html>

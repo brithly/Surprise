@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary Baba ko</title>
+    <style>
+        /* Background styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #F2E2B1, #BDB395);
+            font-family: 'Fira Sans Book', sans-serif;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        /* Scrolling banner */
+        .scrolling-banner {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            color: #8c7a65;
+            font-size: 15px;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .scrolling-banner span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scrollText 50s linear infinite;
+            animation-delay: -24s; /* Makes it visible within 3s */
+        }
+
+        @keyframes scrollText {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Card container */
+        .card {
+            background: #F6F0F0;
+            padding: 25px 35px;
+            border-radius: 50px;
+            box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 315px;
+            border: 2px solid #747474;
+            position: relative;
+        }
+
+        /* Soft outer shadow effect */
+        .card::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50px;
+            top: 12px;
+            left: 12px;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: -1;
+        }
+
+        /* Title styling */
+        .card h2 {
+            margin: 5px 0;
+            color: #747474;
+            font-size: 25px;
+            font-weight: bold;
+            font-family: 'Inria Sans Light', serif;
+        }
+
+        /* Text description */
+        .card p {
+            font-size: 15px;
+            color: #747474;
+            margin: 10px 0;
+            line-height: 1.4;
+        }
+
+        /* Button styling */
+        .button {
+            background-color: #BDB395;
+            border: 2px solid #FFFFFF;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            color: #FFFFFF;
+            font-size: 15px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-family: 'Fira Sans Book', sans-serif;
+            box-shadow: inset 2px 2px 4px rgba(255, 255, 255, 0.6),
+                inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .button:hover {
+            background-color: #bba58a;
+            border-color: #8c7a65;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scrolling-banner">
+        <span>Have fun! Navigate the system on your own. It's a surprise gift so don't ask me where to click or what you
+            will gonna do. Also refresh the page when you will be impatiently waiting for this message to pop up again. Thanks! I love youuu ♥</span>
+    </div>
+
+    <div class="card">
+        <h2>Hi! I'm Haley</h2>
+        <p>I want to greet you with this gift of mine >-<. <br> I hope you like it!</p>
+        <br>
+        <button class="button" onclick="goToPhase2()">Click Here!</button>
+    </div>
+
+    <script>
+        function goToPhase2() {
+            window.location.href = "phase1.html";
+        }
+    </script>
+</body>
+
+</html>

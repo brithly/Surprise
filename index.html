@@ -120,7 +120,7 @@
 
         .modal-content {
             background: #F6F0F0;
-            padding: 35px;
+            padding: 25px;
             border-radius: 20px;
             box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2);
             text-align: center;
@@ -137,6 +137,7 @@
             text-align: center;
             position: relative;
             padding-right: 30px;
+            font-family: 'Fira Sans Book', sans-serif;
         }
 
         .password-container {
@@ -158,7 +159,7 @@
             margin: 5px 0;
             color:red;
             padding-bottom: 5px;
-            font-size: 32px;
+            font-size: 33px;
             font-weight: bold;
             font-family: 'Inria Sans Light', serif;
         }
@@ -177,6 +178,32 @@
             font-weight: lighter;
             padding-bottom: 5px;
             font-family: 'Fira Sans Book', sans-serif;
+        }
+
+        .keypad {
+            display: grid;
+            grid-template-columns: repeat(3, 40px);
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .keypad button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: none;
+            background-color: #BDB395;
+            color: #FFFFFF;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: inset 2px 2px 4px rgba(255, 255, 255, 0.6),
+                inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .keypad button:hover {
+            background-color: #bba58a;
         }
     </style>
 </head>
@@ -197,12 +224,26 @@
 
     <div id="authModal" class="modal">
         <div class="modal-content">
-            <h3>Authetication Mode</h3>
+            <h3>Authentication Mode</h3>
             <h5>Birthday of Haley, Anniversary Day and <br>Birthday of You</h5>
             <h6>Month and Day</h6>
             <div class="password-container">
-                <input type="password" id="passwordInput" placeholder="Password">
+                <input type="password" id="passwordInput" placeholder="Enter Password" readonly>
                 <span class="toggle-password" onclick="togglePassword()">👁️</span>
+            </div>
+            <div class="keypad">
+                <button onclick="appendNumber('1')">1</button>
+                <button onclick="appendNumber('2')">2</button>
+                <button onclick="appendNumber('3')">3</button>
+                <button onclick="appendNumber('4')">4</button>
+                <button onclick="appendNumber('5')">5</button>
+                <button onclick="appendNumber('6')">6</button>
+                <button onclick="appendNumber('7')">7</button>
+                <button onclick="appendNumber('8')">8</button>
+                <button onclick="appendNumber('9')">9</button>
+                <button onclick="clearPassword()">C</button>
+                <button onclick="appendNumber('0')">0</button>
+                <button onclick="deleteLast()">←</button>
             </div>
             <br>
             <button class="button" onclick="checkPassword()">Submit</button>
@@ -225,6 +266,19 @@
             }
         }
 
+        function appendNumber(num) {
+                document.getElementById("passwordInput").value += num;
+            }
+
+            function clearPassword() {
+                document.getElementById("passwordInput").value = "";
+            }
+
+            function deleteLast() {
+                let input = document.getElementById("passwordInput");
+                input.value = input.value.slice(0, -1);
+            }
+
         function togglePassword() {
             const passwordInput = document.getElementById("passwordInput");
             const toggleIcon = document.querySelector(".toggle-password");
@@ -238,6 +292,16 @@
             }
         }
 
+        document.addEventListener("keydown", function (event) {
+            if (event.key >= "0" && event.key <= "9") {
+                appendNumber(event.key);
+            } else if (event.key === "Backspace") {
+                deleteLast();
+            } else if (event.key === "Enter") {
+                checkPassword();
+            }
+        });
+
         // Close modal when clicking outside of it
         document.getElementById("authModal").addEventListener("click", function (event) {
             if (event.target === this) {
@@ -245,7 +309,6 @@
             }
         });
     </script>
-
 </body>
 
 </html>

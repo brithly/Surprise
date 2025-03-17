@@ -355,62 +355,61 @@
 
             let currentPageIndex = 0;
 
-        function updatePage(index) {
-            titleElement.style.opacity = 0;
-            subtitleElement.style.opacity = 0;
-            letterElement.style.opacity = 0;
+            function updatePage(index) {
+                titleElement.style.opacity = 0;
+                subtitleElement.style.opacity = 0;
+                letterElement.style.opacity = 0;
 
-            setTimeout(() => {
-                titleElement.textContent = pages[index].title;
-                subtitleElement.textContent = pages[index].subtitle;
-                letterElement.innerHTML = pages[index].content;
+                setTimeout(() => {
+                    titleElement.textContent = pages[index].title;
+                    subtitleElement.textContent = pages[index].subtitle;
+                    letterElement.innerHTML = pages[index].content;
 
-                titleElement.style.opacity = 1;
-                subtitleElement.style.opacity = 1;
-                letterElement.style.opacity = 1;
+                    titleElement.style.opacity = 1;
+                    subtitleElement.style.opacity = 1;
+                    letterElement.style.opacity = 1;
 
-                updateButtonState();
-            }, 300);
-        }
-
-        function updateButtonState() {
-            // Disable "Back" on first page
-            if (currentPageIndex === 0) {
-                backButton.classList.add("disabled-button");
-                backButton.disabled = true;
-            } else {
-                backButton.classList.remove("disabled-button");
-                backButton.disabled = false;
+                    updateButtonState();
+                }, 300);
             }
 
-            // Disable "Next" on last page
-            if (currentPageIndex === pages.length - 1) {
-                nextButton.classList.add("disabled-button");
-                nextButton.disabled = true;
-            } else {
-                nextButton.classList.remove("disabled-button");
-                nextButton.disabled = false;
-            }
-        }
+            function updateButtonState() {
+                // Disable "Back" on first page
+                if (currentPageIndex === 0) {
+                    backButton.classList.add("disabled-button");
+                    backButton.disabled = true;
+                } else {
+                    backButton.classList.remove("disabled-button");
+                    backButton.disabled = false;
+                }
 
-        nextButton.addEventListener("click", function () {
-            if (currentPageIndex < pages.length - 1) {
-                currentPageIndex++;
-                updatePage(currentPageIndex);
+                // Disable "Next" on last page
+                if (currentPageIndex === pages.length - 1) {
+                    nextButton.classList.add("disabled-button");
+                    nextButton.disabled = true;
+                } else {
+                    nextButton.classList.remove("disabled-button");
+                    nextButton.disabled = false;
+                }
             }
+
+            nextButton.addEventListener("click", function () {
+                if (currentPageIndex < pages.length - 1) {
+                    currentPageIndex++;
+                    updatePage(currentPageIndex);
+                }
+            });
+
+            backButton.addEventListener("click", function () {
+                if (currentPageIndex > 0) {
+                    currentPageIndex--;
+                    updatePage(currentPageIndex);
+                }
+            });
+
+            // Initialize the button state
+            updateButtonState();
         });
-
-        backButton.addEventListener("click", function () {
-            if (currentPageIndex > 0) {
-                currentPageIndex--;
-                updatePage(currentPageIndex);
-            }
-        });
-
-        // Initialize the button state
-        updateButtonState();
-    });
-
 </script>
 
 

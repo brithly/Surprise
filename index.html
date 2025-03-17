@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Anniversary Baba ko</title>
+    <title>Happy</title>
     <style>
-        /* Background styling */
         body {
             display: flex;
             justify-content: center;
@@ -18,7 +17,6 @@
             flex-direction: column;
         }
 
-        /* Scrolling banner */
         .scrolling-banner {
             width: 100%;
             overflow: hidden;
@@ -35,7 +33,7 @@
             display: inline-block;
             padding-left: 100%;
             animation: scrollText 50s linear infinite;
-            animation-delay: -24s; /* Makes it visible within 3s */
+            animation-delay: -24s;
         }
 
         @keyframes scrollText {
@@ -48,7 +46,6 @@
             }
         }
 
-        /* Card container */
         .card {
             background: #F6F0F0;
             padding: 25px 35px;
@@ -60,7 +57,6 @@
             position: relative;
         }
 
-        /* Soft outer shadow effect */
         .card::after {
             content: "";
             position: absolute;
@@ -73,7 +69,6 @@
             z-index: -1;
         }
 
-        /* Title styling */
         .card h2 {
             margin: 5px 0;
             color: #747474;
@@ -82,7 +77,6 @@
             font-family: 'Inria Sans Light', serif;
         }
 
-        /* Text description */
         .card p {
             font-size: 15px;
             color: #747474;
@@ -90,7 +84,6 @@
             line-height: 1.4;
         }
 
-        /* Button styling */
         .button {
             background-color: #BDB395;
             border: 2px solid #FFFFFF;
@@ -110,27 +103,149 @@
             background-color: #bba58a;
             border-color: #8c7a65;
         }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #F6F0F0;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+            border: 2px solid#8c7a65;
+        }
+
+        .modal input {
+            width: 80%;
+            padding: 8px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 1px solid #747474;
+            text-align: center;
+            position: relative;
+            padding-right: 30px;
+        }
+
+        .password-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 18px;
+            color: #747474;
+        }
+
+        .modal h3 {
+            margin: 5px 0;
+            color:red;
+            padding-bottom: 5px;
+            font-size: 32px;
+            font-weight: bold;
+            font-family: 'Inria Sans Light', serif;
+        }
+
+        .modal h5 {
+            margin: 5px 0;
+            color: #747474;
+            font-size: 12px;
+            font-family: 'Fira Sans Book', sans-serif;
+        }
+
+        .modal h6 {
+            margin: 5px 0;
+            color: #747474;
+            font-size: 10px;
+            font-weight: lighter;
+            padding-bottom: 5px;
+            font-family: 'Fira Sans Book', sans-serif;
+        }
     </style>
 </head>
 
 <body>
     <div class="scrolling-banner">
         <span>Have fun! Navigate the system on your own. It's a surprise gift so don't ask me where to click or what you
-            will gonna do. Also refresh the page when you will be impatiently waiting for this message to pop up again. Thanks! I love youuu ♥</span>
+            will gonna do. Also refresh the page when you will be impatiently waiting for this message to pop up again.
+            Thanks! I love youuu ♥</span>
     </div>
 
     <div class="card">
         <h2>Hi! I'm Haley</h2>
         <p>I want to greet you with this gift of mine >-<. <br> I hope you like it!</p>
         <br>
-        <button class="button" onclick="goToPhase2()">Click Here!</button>
+        <button class="button" onclick="openModal()">Click Here!</button>
+    </div>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <h3>Authetication Mode</h3>
+            <h5>Birthday of Haley, Anniversary Day and <br>Birthday of You</h5>
+            <h6>Month and Day</h6>
+            <div class="password-container">
+                <input type="password" id="passwordInput" placeholder="Password">
+                <span class="toggle-password" onclick="togglePassword()">👁️</span>
+            </div>
+            <br>
+            <button class="button" onclick="checkPassword()">Submit</button>
+        </div>
     </div>
 
     <script>
-        function goToPhase2() {
-            window.location.href = "phase1.html";
+        function openModal() {
+            document.getElementById("authModal").style.display = "flex";
         }
+
+        function checkPassword() {
+            const password = document.getElementById("passwordInput").value;
+            const correctPassword = "022603230319"; // Change this to the actual password
+
+            if (password === correctPassword) {
+                window.location.href = "phase1.html";
+            } else {
+                alert("Incorrect password! Try again.");
+            }
+        }
+
+        function togglePassword() {
+            const passwordInput = document.getElementById("passwordInput");
+            const toggleIcon = document.querySelector(".toggle-password");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleIcon.textContent = "🙈"; // Change to closed eye
+            } else {
+                passwordInput.type = "password";
+                toggleIcon.textContent = "👁️"; // Change to open eye
+            }
+        }
+
+        // Close modal when clicking outside of it
+        document.getElementById("authModal").addEventListener("click", function (event) {
+            if (event.target === this) {
+                this.style.display = "none";
+            }
+        });
     </script>
+
 </body>
 
 </html>
